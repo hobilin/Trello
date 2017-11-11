@@ -8,15 +8,28 @@
   </head>
   <body>
 <header>
-  <div class="return btn"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
-  <div class="board btn"><i class="fa fa-trello" aria-hidden="true"></i><p>Boards</p></div>
-  <input class="search" type="text" name="" value="">
+  <div class="return btn hover"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+  <div class="board btn hover"><i class="fa fa-trello" aria-hidden="true"></i><p>Boards</p></div>
+  <input class="search" id="searchov" type="text" name="" value="">
   <i class="fa fa-search" aria-hidden="true"></i>
-  <div class="logo">
+  <div class="logo" id="logohov">
     <img src="assets/trello.png" alt="">
   </div>
-  <div class="add btn"><i class="fa fa-plus" aria-hidden="true"></i>/div>
-    <div class="info btn"><i class="fa fa-info" aria-hidden="true"></i></div>
+  <div class="add btn hover"><i class="fa fa-plus" aria-hidden="true"></i></div>
+    <div class="info btn hover"><i class="fa fa-info" aria-hidden="true"></i></div>
+    <div class="bell btn hover"><i class="fa fa-bell-o" aria-hidden="true"></i></div>
+    <div class="profile"><img src="assets/profile.png" alt="Jung Hoseok"></div>
 </header>
+
+<div id="container">
+  <button id="btnAdd" type="button" name="button">Add a list...</button>
+
+  <form  id="firstForm" class="" action="javascript:void(0)">
+    <input id="firstInput" placeholder="Add a list.." type="text" name="" value="">
+    <button id="btnSave" type="button" name="button">Save</button>
+  </form>
+</div>
+
+<script src="js/app.js" charset="utf-8"></script>
   </body>
 </html>
