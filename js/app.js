@@ -1,7 +1,7 @@
 document.getElementById("firstForm").style.display = "none";
 
 var btnAdd = document.getElementById("btnAdd");
-
+  console.log("hola");
 btnAdd.addEventListener("click", function(){
  var container = document.getElementById("container")
   var containerForm = document.getElementById("firstForm");
@@ -9,9 +9,9 @@ btnAdd.addEventListener("click", function(){
   containerForm.style.display = "inline-block";
 });
 
-
+  console.log("hola");
 var btnSave = document.getElementById("btnSave");
-
+  console.log("hola");
 btnSave.addEventListener("click", function(){
   var containerForm = document.getElementById("firstForm");
   containerForm.style.display = "none";
@@ -27,13 +27,31 @@ btnSave.addEventListener("click", function(){
   containerTitle.appendChild(paragraphTitle);
   container.appendChild(containerTitle);
 
-  var containerBtnAddList = document.createElement("div");
-  var btnAddList = document.createElement("button");
-  var btnAddListText = document.createTextNode("Add a card...")
 
-  btnAddList.appendChild(btnAddListText);
-  containerBtnAddList.appendChild(btnAddList);
-  container.appendChild(containerBtnAddList);
+  var containerBtnAddCard = document.createElement('div');
+  var btnAddCard = document.createElement('button');
+  btnAddCard.classList.add("btnAddCard");
+  var btnAddCardText = document.createTextNode('Add a card...');
+  containerBtnAddCard.classList.add('containerBtnAddCard');
+
+  btnAddCard.appendChild(btnAddCardText);
+  containerBtnAddCard.appendChild(btnAddCard);
+  container.appendChild(containerBtnAddCard);
 
 
-});
+  btnAddCard.addEventListener('click', function(){
+    containerBtnAddCard.style.display='none';
+    var containerTextarea = document.createElement("div");
+    containerTextarea.classList.add("containerTextarea");
+    var textarea = document.createElement("textarea");
+    textarea.classList.add("textarea");
+    var btnAddList = document.createElement("button");
+    btnAddList.classList.add("btnAddList");
+    var btnAddListText = document.createTextNode("Add");
+
+    btnAddList.appendChild(btnAddListText);
+    containerTextarea.appendChild(textarea);
+    containerTextarea.appendChild(btnAddList);
+    container.appendChild(containerTextarea);
+ })
+})
