@@ -199,10 +199,16 @@ color: #fff;
   margin-left: 20px;
 }
 
-.containerTitle {
+#container{
+  float:left;
+}
+
+.containerTask {
   margin-top: 100px;
   margin-left: 20px;
 }
+
+
 
 .containerBtnAddCard{
 

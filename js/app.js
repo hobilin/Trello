@@ -1,8 +1,9 @@
 document.getElementById("firstForm").style.display = "none";
+var section = document.getElementById("section");
 
 var btnAdd = document.getElementById("btnAdd");
 btnAdd.addEventListener("click", function(){
- var container = document.getElementById("container")
+ var containerForm = document.getElementById("containerForm")
   var containerForm = document.getElementById("firstForm");
   btnAdd.style.display = "none";
   containerForm.style.display = "inline-block";
@@ -10,20 +11,22 @@ btnAdd.addEventListener("click", function(){
 
 var btnSave = document.getElementById("btnSave");
 btnSave.addEventListener("click", function(){
-  var containerForm = document.getElementById("firstForm");
-  containerForm.style.display = "none";
+  var containerList = document.getElementById("containerList");
+  document.getElementById("containerForm").style.float = "left";
+  document.getElementById("containerList").style.float = "left";
 
-  var container = document.getElementById("container")
   var title = document.getElementById("firstInput").value;
+  document.getElementById("firstInput").value = "";
   var titleText = document.createTextNode(title);
-  var containerTitle = document.createElement("div");
-  containerTitle.classList.add("containerTitle");
+  var containerTask = document.createElement("div");
+  containerTask.classList.add("containerTask");
   var paragraphTitle = document.createElement("p");
 
   paragraphTitle.appendChild(titleText);
-  containerTitle.appendChild(paragraphTitle);
-  container.appendChild(containerTitle);
+  containerTask.appendChild(paragraphTitle);
+  containerList.appendChild(containerTask);
 
+containerTask.style.float = "left";
 
   var containerBtnAddCard = document.createElement('div');
   var btnAddCard = document.createElement('button');
@@ -33,7 +36,8 @@ btnSave.addEventListener("click", function(){
 
   btnAddCard.appendChild(btnAddCardText);
   containerBtnAddCard.appendChild(btnAddCard);
-  container.appendChild(containerBtnAddCard);
+  containerTask.appendChild(containerBtnAddCard);
+
 
 
   btnAddCard.addEventListener('click', function(){
@@ -49,18 +53,26 @@ btnSave.addEventListener("click", function(){
     btnAddList.appendChild(btnAddListText);
     containerTextarea.appendChild(textarea);
     containerTextarea.appendChild(btnAddList);
-    container.appendChild(containerTextarea);
+    containerTask.appendChild(containerTextarea);
 
     btnAddList.addEventListener("click", function(){
       var textareaValue = textarea.value;
       textarea.value = "";
       var textareaText = document.createTextNode(textareaValue);
+      var pencil = document.createElement("i");
+        pencil.classList.add('fa', 'fa-pencil', 'pencil');
       var textareaParagraph = document.createElement("p");
       var containerTextareaParagraph = document.createElement("div");
 
       textareaParagraph.appendChild(textareaText);
       containerTextareaParagraph.appendChild(textareaParagraph);
-      container.insertBefore(containerTextareaParagraph, containerTextarea);
+      containerTextareaParagraph.appendChild(pencil);
+      containerTask.insertBefore(containerTextareaParagraph, containerTextarea);
+      textareaParagraph.style.display = "inline-block";
+      pencil.style.display = "inline-block";
+
+
     })
  })
+   section.insertBefore(containerList, containerForm);
 })
