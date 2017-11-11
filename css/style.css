@@ -209,7 +209,7 @@ color: #fff;
 }
 
 .btnAddCard{
-  
+
 }
 
 .containerTextarea{
@@ -218,6 +218,14 @@ color: #fff;
 
 .textarea {
 
+}
+
+.textarea:focus{
+  outline: none;
+}
+
+input:focus {
+  outline: none;
 }
 
 .btnAddList{

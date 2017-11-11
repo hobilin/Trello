@@ -1,7 +1,6 @@
 document.getElementById("firstForm").style.display = "none";
 
 var btnAdd = document.getElementById("btnAdd");
-  console.log("hola");
 btnAdd.addEventListener("click", function(){
  var container = document.getElementById("container")
   var containerForm = document.getElementById("firstForm");
@@ -9,9 +8,7 @@ btnAdd.addEventListener("click", function(){
   containerForm.style.display = "inline-block";
 });
 
-  console.log("hola");
 var btnSave = document.getElementById("btnSave");
-  console.log("hola");
 btnSave.addEventListener("click", function(){
   var containerForm = document.getElementById("firstForm");
   containerForm.style.display = "none";
@@ -53,5 +50,17 @@ btnSave.addEventListener("click", function(){
     containerTextarea.appendChild(textarea);
     containerTextarea.appendChild(btnAddList);
     container.appendChild(containerTextarea);
+
+    btnAddList.addEventListener("click", function(){
+      var textareaValue = textarea.value;
+      textarea.value = "";
+      var textareaText = document.createTextNode(textareaValue);
+      var textareaParagraph = document.createElement("p");
+      var containerTextareaParagraph = document.createElement("div");
+
+      textareaParagraph.appendChild(textareaText);
+      containerTextareaParagraph.appendChild(textareaParagraph);
+      container.insertBefore(containerTextareaParagraph, containerTextarea);
+    })
  })
 })
