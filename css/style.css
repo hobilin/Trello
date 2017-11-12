@@ -233,6 +233,22 @@ color: #fff;
   background-color: #519839;
 }
 
+.fa.fa-times {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-left: 5px;
+  color: #999;
+  line-height: 30px;
+  background-color: transparent;
+}
+
+.fa-times:hover {
+  color: #333;
+
+}
+
 #firstForm {
   margin-top: 100px;
   margin-left: 20px;
@@ -267,6 +283,7 @@ color: #fff;
   color: #333;
   line-height: 18px;
   font-weight: 400;
+  float: left;
 }
 
 

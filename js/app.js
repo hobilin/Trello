@@ -10,6 +10,13 @@ btnAdd.addEventListener("click", function(){
   var containerForm = document.getElementById("firstForm");
   btnAdd.style.display = "none";
   containerForm.style.display = "inline-block";
+
+  //función para regresar a add a list cuando se cliquea en la x
+  var firstEx = document.getElementById("firstEx");
+  firstEx.addEventListener("click", function(){
+    containerForm.style.display = "none";
+    btnAdd.style.display = 'inline-block';
+  })
 });
 
 //segunda función a ejecutar cuando se cliquee el botón save.
@@ -34,7 +41,6 @@ btnSave.addEventListener("click", function(){
   containerTask.appendChild(paragraphTitle);
   containerList.appendChild(containerTask);
 
-containerTask.style.float = "left";
 
   var containerBtnAddCard = document.createElement('div');
   var btnAddCard = document.createElement('a');
@@ -57,11 +63,20 @@ containerTask.style.float = "left";
     var btnAddList = document.createElement("button");
     btnAddList.classList.add("btnAddList");
     var btnAddListText = document.createTextNode("Add");
+    var ex = document.createElement("i");
+    ex.classList.add('fa', 'fa-times', 'times');
 
     btnAddList.appendChild(btnAddListText);
     containerTextarea.appendChild(textarea);
     containerTextarea.appendChild(btnAddList);
+    containerTextarea.appendChild(ex);
     containerTask.appendChild(containerTextarea);
+
+//función para regresar a add a card cuando se cliquea en la x
+ex.addEventListener("click", function(){
+  containerTextarea.style.display = "none";
+  containerBtnAddCard.style.display = 'inline-block';
+})
 
 
 //cuarta función a ejecutar cuando se cliquee el botón add.
@@ -75,10 +90,11 @@ containerTask.style.float = "left";
       textareaParagraph.classList.add("textareaParagraph");
       var containerTextareaParagraph = document.createElement("div");
       containerTextareaParagraph.classList.add("containerTextareaParagraph");
+
       textareaParagraph.appendChild(textareaText);
       textareaParagraph.appendChild(pencil);
       containerTask.insertBefore(textareaParagraph, containerTextarea);
-
+      containerTask.insertBefore(textareaParagraph, containerBtnAddCard);
 
 
 
