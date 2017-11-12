@@ -2,7 +2,7 @@ body {
   background-image: url(../assets/san3.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: helvetica;
+  font: 14px "Helvetica Neue",Arial,Helvetica,sans-serif;
   font-weight: 600;
   font-size: 15px;
 }
@@ -194,35 +194,156 @@ color: #fff;
   z-index: 10;
 }
 
+#firstInput{
+  height: 20px;
+  width: 250px;
+  background: rgba(0,0,0,.05);
+  border-color: #aaa;
+  box-shadow: inset 0 1px 8px rgba(0,0,0,.15);
+  border-radius: 3px;
+  padding: 7px;
+  border: 1px solid #CDD2D4;
+  color: #333;
+  line-height: 18px;
+  font-weight: 400;
+  margin: 0;
+  display: block;
+}
+
+#btnSave {
+  background-color: #5AAC44;
+  box-shadow: 0 1px 0 #519839;
+  color: #fff;
+  float: left;
+  min-height: 30px;
+  height: 30px;
+  margin-top: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: inline-block;
+  font-weight: 700;
+  line-height: 22px;
+  margin: 6px 4px 4px 4px;
+  padding: 5px 1pc;
+  border: none;
+  border-radius: 3px;
+}
+
+#btnSave:hover {
+  background-color: #519839;
+}
+
 #firstForm {
   margin-top: 100px;
   margin-left: 20px;
+  height: auto;
+  min-height: 30px;
+  border-radius: 3px;
+  padding: 4px;
+  background-color: #E2E4E6;
+  margin-right: 10px;
+  width: 275px;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
 }
 
-#container{
-  float:left;
-}
+
 
 .containerTask {
   margin-top: 100px;
   margin-left: 20px;
+  width: 280px;
+  background-color: #E2E4E6;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  vertical-align: top;
+  max-height: 100%;
+  position: relative;
+  white-space: normal;
+  color: #333;
+  line-height: 18px;
+  font-weight: 400;
 }
 
 
 
 .containerBtnAddCard{
-
+  width: 280px;
 }
 
 .btnAddCard{
-
+  border-radius: 0 0 3px 3px;
+  color: #838c91;
+  display: block;
+  flex: 0 0 auto;
+  padding: 8px 10px;
+  position: relative;
+  line-height: 18px;
+  font-weight: 400;
+  text-decoration: none;
 }
 
-.containerTextarea{
-
+.btnAddCard:hover {
+  text-decoration: underline;
+  background-color: #CDD2D4;
+  color: #5d5f60;
 }
+
+.paragraphTitle {
+  cursor: pointer;
+  display: inline-block;
+  white-space: normal;
+  color: #333333;
+  font-weight: bolder;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  word-wrap: break-word;
+}
+
+.fa-ellipsis-h {
+  border-radius: 3px;
+  padding: 5px 10px;
+  color: rgb(158, 158, 156);
+  float: right;
+  margin-right: 5px;
+  margin-top: 0;
+  display: inline-block;
+}
+
+.fa-ellipsis-h:hover {
+  background-color: #CDD2D4;
+}
+
 
 .textarea {
+  width: 260px;
+  height: 65px;
+  border-radius: 3px;
+  margin-left: 10px;
+  overflow: hidden;
+  resize: none;
+  border: none;
+  margin-bottom: 4px;
+  max-height: 162px;
+  min-height: 54px;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 3px;
+  display: block;
+  color: #333;
+  line-height: 18px;
+  font-weight: 400;
+  text-indent: 0px;
+  text-shadow: none;
+  text-align: start;
+
 
 }
 
@@ -235,5 +356,68 @@ input:focus {
 }
 
 .btnAddList{
+  background-color: #5AAC44;
+  box-shadow: 0 1px 0 #519839;
+  color: #fff;
+  float: left;
+  min-height: 30px;
+  height: 30px;
+  margin-top: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: inline-block;
+  font-weight: 700;
+  line-height: 22px;
+  margin: 6px 10px 8px 10px;
+  padding: 5px 1pc;
+  border: none;
+  border-radius: 3px;
+  }
 
+  .btnAddList:hover {
+    background-color: ##519839;
+    }
+
+.containerTextareaParagraph {
+  width: 250px;
+  height: auto;
+}
+
+.textareaParagraph{
+  vertical-align: top;
+  background: #fff;
+  border-radius: 3px;
+  max-height: 100%;
+  width: 250px;
+  height: 100%;
+  padding: 5px;
+  margin-left: 10px;
+  overflow: hidden;
+  word-wrap: break-word;
+  display: inline-table;
+  margin-top: 0;
+}
+
+.fa-pencil {
+  border-radius: 3px;
+  padding: 5px 10px;
+  color: rgb(158, 158, 156);
+  float: right;
+  margin-right: 5px;
+  margin-top: 0;
+  display: inline-block;
+  visibility: hidden;
+}
+
+.fa-pencil:hover {
+  background-color: #CDD2D4;
+}
+
+.textareaParagraph:hover .fa-pencil {
+  visibility: visible;
+  color: rgb(84, 84, 84);
+}
+
+.textareaParagraph:hover {
+  background-color: #EDEFF0;
 }

@@ -1,6 +1,9 @@
+//para que nos e muestre el formulario antes de que se cliquee en el botón add a list.
 document.getElementById("firstForm").style.display = "none";
+//sección que contiene todas las listas
 var section = document.getElementById("section");
 
+//primera función a ejecutar cuando se cliquee en el botón add a list.
 var btnAdd = document.getElementById("btnAdd");
 btnAdd.addEventListener("click", function(){
  var containerForm = document.getElementById("containerForm")
@@ -9,6 +12,7 @@ btnAdd.addEventListener("click", function(){
   containerForm.style.display = "inline-block";
 });
 
+//segunda función a ejecutar cuando se cliquee el botón save.
 var btnSave = document.getElementById("btnSave");
 btnSave.addEventListener("click", function(){
   var containerList = document.getElementById("containerList");
@@ -18,18 +22,22 @@ btnSave.addEventListener("click", function(){
   var title = document.getElementById("firstInput").value;
   document.getElementById("firstInput").value = "";
   var titleText = document.createTextNode(title);
+  var ellipsis = document.createElement("i");
+    ellipsis.classList.add('fa', 'fa-ellipsis-h');
   var containerTask = document.createElement("div");
   containerTask.classList.add("containerTask");
   var paragraphTitle = document.createElement("p");
+  paragraphTitle.classList.add("paragraphTitle");
 
   paragraphTitle.appendChild(titleText);
+  paragraphTitle.appendChild(ellipsis);
   containerTask.appendChild(paragraphTitle);
   containerList.appendChild(containerTask);
 
 containerTask.style.float = "left";
 
   var containerBtnAddCard = document.createElement('div');
-  var btnAddCard = document.createElement('button');
+  var btnAddCard = document.createElement('a');
   btnAddCard.classList.add("btnAddCard");
   var btnAddCardText = document.createTextNode('Add a card...');
   containerBtnAddCard.classList.add('containerBtnAddCard');
@@ -39,7 +47,7 @@ containerTask.style.float = "left";
   containerTask.appendChild(containerBtnAddCard);
 
 
-
+//tercera función a ejecutar cuando se cliquee el botón add a card
   btnAddCard.addEventListener('click', function(){
     containerBtnAddCard.style.display='none';
     var containerTextarea = document.createElement("div");
@@ -55,21 +63,23 @@ containerTask.style.float = "left";
     containerTextarea.appendChild(btnAddList);
     containerTask.appendChild(containerTextarea);
 
+
+//cuarta función a ejecutar cuando se cliquee el botón add.
     btnAddList.addEventListener("click", function(){
       var textareaValue = textarea.value;
       textarea.value = "";
       var textareaText = document.createTextNode(textareaValue);
       var pencil = document.createElement("i");
-        pencil.classList.add('fa', 'fa-pencil', 'pencil');
+      pencil.classList.add('fa', 'fa-pencil', 'pencil');
       var textareaParagraph = document.createElement("p");
+      textareaParagraph.classList.add("textareaParagraph");
       var containerTextareaParagraph = document.createElement("div");
-
+      containerTextareaParagraph.classList.add("containerTextareaParagraph");
       textareaParagraph.appendChild(textareaText);
-      containerTextareaParagraph.appendChild(textareaParagraph);
-      containerTextareaParagraph.appendChild(pencil);
-      containerTask.insertBefore(containerTextareaParagraph, containerTextarea);
-      textareaParagraph.style.display = "inline-block";
-      pencil.style.display = "inline-block";
+      textareaParagraph.appendChild(pencil);
+      containerTask.insertBefore(textareaParagraph, containerTextarea);
+
+
 
 
     })
